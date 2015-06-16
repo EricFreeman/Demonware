@@ -16,7 +16,7 @@
         {
             return new ResponseEnvelope<T>
             {
-                IsSuccessful = isSuccess,
+                Completed = isSuccess,
                 Message = message,
                 Result = result
             };

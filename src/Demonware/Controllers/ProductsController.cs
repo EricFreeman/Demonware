@@ -1,27 +1,26 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Results;
 using Demonware.Models;
 using Demonware.Response;
+using RestSharp;
+using RestSharp.Serializers;
 
 namespace Demonware.Controllers
 {
     public class ProductsController : ApiController
     {
-        public JsonResult<ResponseEnvelope<List<Product>>> GetProductsByBrand()
+        public JsonResult<ResponseEnvelope<Product>> GetProduct()
         {
-            var productList = new List<Product>
-            {
-                new Product
-                {
-                    Brand="TestBrand",
-                    Id="0001",
-                    Name="TestProduct1"
-                }
-            };
+            var client = new RestClient("https://dev01-ecom2-1800contacts.demandware.net/s/1800contacts");
+            var request = new RestRequest("services/products/getProduct", Method.POST);
+            request.AddParameter("productId", "002736");
+            request.RequestFormat = DataFormat.Json;
+            request.JsonSerializer = new JsonSerializer();
+            var result = client.Execute<ResponseEnvelope<Product>>(request);
 
-            var result = ResponseBuilder.BuildForSuccess(productList, "Success");
-            return Json(result);
-        } 
+            return Json(result.Data);
+        }
     }
 }
