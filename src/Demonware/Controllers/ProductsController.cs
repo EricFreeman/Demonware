@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Results;
 using Demonware.Models;
 using Demonware.Response;
@@ -7,6 +8,7 @@ using RestSharp.Serializers;
 
 namespace Demonware.Controllers
 {
+    [EnableCors(origins: "http://prototype.1800contacts.com", headers: "*", methods: "*")]
     public class ProductsController : ApiController
     {
         public JsonResult<ResponseEnvelope<Product>> GetProduct()
