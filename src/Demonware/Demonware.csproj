@@ -113,6 +113,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Demonware.Request\Demonware.Request.csproj">
+      <Project>{8E6040D8-96A9-434E-BE72-F2D9EFB507B3}</Project>
+      <Name>Demonware.Request</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Demonware.Response\Demonware.Response.csproj">
       <Project>{8A84E548-C12E-48F8-B50D-DC2DA2D2B319}</Project>
       <Name>Demonware.Response</Name>

@@ -2,6 +2,7 @@
 using System.Web.Http.Cors;
 using System.Web.Http.Results;
 using Demonware.Models;
+using Demonware.Request;
 using Demonware.Response;
 using RestSharp;
 using RestSharp.Serializers;
@@ -11,27 +12,16 @@ namespace Demonware.Controllers
     [EnableCors(origins: "http://prototype.1800contacts.com", headers: "*", methods: "*")]
     public class ProductsController : ApiController
     {
-        public JsonResult<ResponseEnvelope<Product>> GetProduct()
+        [HttpPost]
+        public JsonResult<ResponseEnvelope<Product>> GetProduct(string id)
         {
-            var client = new RestClient("https://dev01-ecom2-1800contacts.demandware.net/s/1800contacts");
-            var request = new RestRequest("services/products/getProduct", Method.POST);
-            request.AddParameter("productId", "002736");
-            request.RequestFormat = DataFormat.Json;
-            request.JsonSerializer = new JsonSerializer();
-            var result = client.Execute<ResponseEnvelope<Product>>(request);
-
+            var result = Hell.HailSatan<ResponseEnvelope<Product>>("services/products/getProduct", Method.POST, new RequestParameter("productId", id));
             return Json(result.Data);
         }
 
         public JsonResult<InitialState> GetInitialState()
         {
-            var client = new RestClient("https://dev01-ecom2-1800contacts.demandware.net/s/1800contacts");
-            var request = new RestRequest("services/app/getInitialState", Method.POST);
-            request.AddParameter("productId", "002736");
-            request.RequestFormat = DataFormat.Json;
-            request.JsonSerializer = new JsonSerializer();
-            var result = client.Execute<InitialState>(request);
-
+            var result = Hell.HailSatan<InitialState>("services/app/getInitialState", Method.POST);
             return Json(result.Data);
         }
     }
