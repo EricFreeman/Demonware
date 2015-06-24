@@ -98,6 +98,8 @@
     <Compile Include="Models\Manufacturer.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductImages.cs" />
+    <Compile Include="Models\QuantityOption.cs" />
+    <Compile Include="Models\Rebate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
