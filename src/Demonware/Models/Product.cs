@@ -24,6 +24,9 @@ namespace Demonware.Models
         public string Price { get; set; }
 
         [JsonProperty(PropertyName = "quantites")]
-        public List<QuantityOption> Quantities { get; set; } 
+        public List<QuantityOption> Quantities { get; set; }
+
+        [JsonProperty(PropertyName = "dimensions")]
+        public dynamic Dimensions { get; set; } 
     }
 }
