@@ -5,7 +5,6 @@ using Demonware.Models;
 using Demonware.Request;
 using Demonware.Response;
 using RestSharp;
-using RestSharp.Serializers;
 
 namespace Demonware.Controllers
 {

@@ -8,6 +8,8 @@ namespace Demonware.Models
         public string Id { get; set; }
         public Manufacturer Manufacturer { get; set; }
         public string Name { get; set; }
-        public List<ProductImages> Images { get; set; } 
+        public List<ProductImages> Images { get; set; }
+        public string Price { get; set; }
+        public List<QuantityOption> Quantities { get; set; } 
     }
 }
