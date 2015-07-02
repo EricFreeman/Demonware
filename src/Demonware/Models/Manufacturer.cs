@@ -1,10 +1,7 @@
-﻿using Newtonsoft.Json;
-
-namespace Demonware.Models
+﻿namespace Demonware.Models
 {
     public class Manufacturer
     {
-        [JsonProperty(PropertyName = "name")]
-        public string Name { get; set; }
+        public string name { get; set; }
     }
 }

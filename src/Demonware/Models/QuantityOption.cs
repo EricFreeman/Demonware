@@ -1,25 +1,12 @@
-﻿using Newtonsoft.Json;
-
-namespace Demonware.Models
+﻿namespace Demonware.Models
 {
     public class QuantityOption
     {
-        [JsonProperty(PropertyName = "name")]
-        public string Name { get; set; }
-
-        [JsonProperty(PropertyName = "months")]
-        public string Months { get; set; }
-
-        [JsonProperty(PropertyName = "quantity")]
-        public int Quantity { get; set; }
-
-        [JsonProperty(PropertyName = "minimum")]
-        public int Minimum { get; set; }
-
-        [JsonProperty(PropertyName = "maximum")]
-        public int Maximum { get; set; }
-
-        [JsonProperty(PropertyName = "rebate")]
-        public Rebate Rebate { get; set; }
+        public string name { get; set; }
+        public string months { get; set; }
+        public int quantity { get; set; }
+        public int minimum { get; set; }
+        public int maximum { get; set; }
+        public Rebate rebate { get; set; }
     }
 }
